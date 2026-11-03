@@ -1,0 +1,19 @@
+# Virtual environment
+venv/
+.env
+
+# Python
+__pycache__/
+*.pyc
+
+# macOS
+.DS_Store
+
+# Données brutes
+data/raw/
+
+# Gros fichier généré
+data/processed/carburants_2021_2025.csv
+
+.vscode/
+.idea/

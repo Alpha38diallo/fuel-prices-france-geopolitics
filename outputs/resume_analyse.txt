@@ -1,0 +1,21 @@
+PROJET : Evolution des prix des carburants en France (2021-2025)
+
+Principaux résultats :
+
+- Prix moyen le plus faible observé en 2021 : 1.546 €/L
+- Prix moyen le plus élevé observé en 2023 : 1.878 €/L
+
+- Carburant le plus cher : SP98 (1.841 €/L)
+- Carburant le moins cher : Gazole (1.710 €/L)
+
+- Mois le plus cher : Juin 2022 (2.122 €/L)
+
+- Les dix mois les plus chers sont principalement concentrés entre 2022 et 2024.
+
+- Le Gazole est le carburant le plus volatil de la période étudiée.
+
+Conclusion :
+
+L'analyse met en évidence l'impact majeur de la crise énergétique de 2022 sur les prix 
+des carburants en France. Après un pic observé entre 2022 et 2023, les prix diminuent 
+progressivement en 2024 et 2025 tout en restant supérieurs aux niveaux de 2021.
