@@ -1,22 +1,56 @@
-# ⛽ Analyse des Prix des Carburants en France (2021-2025)
+# ⛽ Fuel Prices France Geopolitics
 
-## 📌 Contexte du projet
+## 📖 Présentation
 
 Ce projet analyse l'évolution des prix des carburants en France entre 2021 et 2025 à partir des données publiques gouvernementales.
 
-L'objectif est d'identifier les tendances de prix, mesurer l'impact des crises énergétiques récentes et comparer les différents types de carburants.
+L'objectif est de comprendre comment les événements économiques, énergétiques et géopolitiques ont influencé les prix des carburants durant cette période.
 
-Ce projet a été réalisé dans le cadre du développement de compétences en Data Analytics avec Python.
+L'étude s'appuie sur plus de 20 millions d'enregistrements collectés, nettoyés et analysés avec Python.
 
 ---
 
-## 🎯 Objectifs
+## 🌍 Contexte géopolitique
 
-- Extraire et exploiter plusieurs années de données carburants.
-- Nettoyer et transformer un volume important de données.
-- Réaliser des analyses statistiques pertinentes.
-- Produire des visualisations claires des tendances observées.
-- Construire un projet complet de portfolio Data Analyst.
+La période 2021-2025 a été marquée par plusieurs événements majeurs ayant fortement influencé les marchés de l'énergie à l'échelle mondiale.
+
+Parmi les principaux facteurs :
+
+- La reprise économique mondiale après la pandémie de Covid‑19.
+- L'augmentation rapide de la demande mondiale en énergie.
+- Les tensions persistantes sur les marchés pétroliers internationaux.
+- Le déclenchement de la guerre en Ukraine en février 2022.
+- Les sanctions économiques et les perturbations des approvisionnements énergétiques européens.
+- Les tensions géopolitiques au Moyen‑Orient, notamment entre Israël et l'Iran.
+- L'implication des États‑Unis dans les équilibres énergétiques mondiaux et la stabilité des marchés pétroliers.
+
+Ces événements ont contribué à une forte volatilité des prix de l'énergie et ont eu un impact direct sur les prix des carburants observés en France entre 2022 et 2023.
+
+---
+
+## 🎯 Objectifs du projet
+
+- Collecter et exploiter des données publiques sur les carburants.
+- Nettoyer et transformer des données brutes XML.
+- Étudier l'évolution des prix dans le temps.
+- Identifier les périodes de hausse et de baisse.
+- Comparer les différents types de carburants.
+- Mesurer la volatilité des prix.
+- Relier les observations aux événements économiques et géopolitiques majeurs.
+- Produire des visualisations facilitant l'interprétation des résultats.
+
+---
+
+## 🛠 Technologies utilisées
+
+- Python
+- Pandas
+- Matplotlib
+- XML
+- CSV
+- SQL
+- Git
+- GitHub
 
 ---
 
@@ -31,10 +65,7 @@ fuel-prices-france-geopolitics/
 │   └── inspect_xml.py
 │
 ├── data/
-│   ├── raw/
 │   └── processed/
-│
-├── notebooks/
 │
 ├── outputs/
 │   ├── evolution_prix_carburants.png
@@ -44,43 +75,47 @@ fuel-prices-france-geopolitics/
 │   ├── volatilite_carburants.png
 │   └── resume_analyse.txt
 │
+├── sql/
+│   ├── create_tables.sql
+│   └── analysis_queries.sql
+│
 ├── src/
 │   ├── extract.py
 │   ├── transform.py
 │   ├── analyze.py
 │   ├── visualize.py
+│   ├── compare_fuels.py
 │   ├── volatility.py
-│   └── compare_fuels.py
+│   ├── region_analysis.py
+│   └── load.py
 │
+├── requirements.txt
 └── README.md
 ```
 
 ---
 
-## 🛠️ Technologies utilisées
-
-- Python 3
-- Pandas
-- Matplotlib
-- XML
-- CSV
-- Git
-- GitHub
-
----
-
 ## 📊 Données
 
-Source :
+### Source
 
-- Données publiques des prix des carburants en France
-- Format XML
-- Période étudiée : 2021 à 2025
+Données ouvertes gouvernementales sur les prix des carburants en France.
+
+### Période étudiée
+
+- 2021
+- 2022
+- 2023
+- 2024
+- 2025
+
+### Volume de données
 
 Après nettoyage et transformation :
 
-- Plus de 20 millions d'enregistrements analysés
-- Dataset final : `carburants_2021_2025.csv`
+- Plus de 20 millions d'enregistrements analysés.
+- Données consolidées dans un format exploitable pour les analyses statistiques.
+- Création d'un jeu de données unique couvrant cinq années d'observation.
 
 ---
 
@@ -88,7 +123,7 @@ Après nettoyage et transformation :
 
 ### 1. Extraction
 
-Le script `extract.py` lit les fichiers XML annuels et extrait :
+Le script `extract.py` extrait les informations depuis les fichiers XML :
 
 - Date
 - Type de carburant
@@ -98,25 +133,25 @@ Le script `extract.py` lit les fichiers XML annuels et extrait :
 
 Le script `transform.py` :
 
-- Convertit les dates
-- Supprime les valeurs aberrantes
-- Normalise les données
-- Crée les variables temporelles
+- Nettoie les données.
+- Convertit les dates.
+- Supprime les anomalies.
+- Prépare les datasets d'analyse.
 
 ### 3. Analyse
 
 Le script `analyze.py` calcule :
 
-- Prix moyen par année
-- Prix moyen par carburant
-- Top 10 des mois les plus chers
-- Carburant le plus cher
-- Carburant le moins cher
-- Volatilité des carburants
+- Le prix moyen par année.
+- Le prix moyen par carburant.
+- Les mois les plus chers.
+- Les carburants les plus volatils.
+- Le carburant le plus cher.
+- Le carburant le moins cher.
 
 ### 4. Visualisation
 
-Les graphiques sont générés automatiquement avec Matplotlib.
+Le script `visualize.py` génère les graphiques du projet avec Matplotlib.
 
 ---
 
@@ -125,69 +160,78 @@ Les graphiques sont générés automatiquement avec Matplotlib.
 ## Prix moyens par année
 
 | Année | Prix moyen (€ / litre) |
-|---------|---------:|
+|--------|--------:|
 | 2021 | 1.546 |
 | 2022 | 1.851 |
 | 2023 | 1.878 |
 | 2024 | 1.800 |
 | 2025 | 1.722 |
 
-### Observation
+### Analyse
 
-- 2023 est l'année la plus chère.
+- 2023 est l'année la plus chère de la période étudiée.
 - 2021 est l'année la moins chère.
-- Les prix augmentent fortement entre 2021 et 2023 puis diminuent progressivement.
+- Une forte augmentation est observée entre 2021 et 2023.
+- Les prix diminuent progressivement à partir de 2024.
 
 ---
 
 ## Prix moyens par carburant
 
 | Carburant | Prix moyen (€ / litre) |
-|------------|---------:|
+|------------|--------:|
 | SP98 | 1.841 |
 | SP95 | 1.771 |
 | E10 | 1.748 |
 | Gazole | 1.710 |
 
-### Observation
+### Analyse
 
 - Le SP98 est le carburant le plus cher.
-- Le Gazole est le carburant le moins cher sur la période analysée.
+- Le Gazole est le carburant le moins cher sur la période étudiée.
 
 ---
 
 ## Top 10 des mois les plus chers
 
-Les trois premiers sont :
+### Top 3
 
 | Mois | Prix moyen (€ / litre) |
-|---------|---------:|
+|---------|--------:|
 | Juin 2022 | 2.122 |
 | Mars 2022 | 2.021 |
 | Juillet 2022 | 1.986 |
 
-### Observation
+### Analyse
 
-Les pics de prix sont principalement concentrés durant la crise énergétique de 2022.
+Les périodes les plus coûteuses sont concentrées autour de la crise énergétique mondiale débutée en 2022.
 
 ---
 
 ## Volatilité des carburants
 
-| Carburant | Volatilité |
-|------------|---------:|
+| Carburant | Écart-type |
+|------------|--------:|
 | Gazole | 0.189 |
 | SP98 | 0.166 |
 | E10 | 0.161 |
 | SP95 | 0.160 |
 
-### Observation
+### Analyse
 
-Le Gazole présente la plus forte volatilité sur la période étudiée.
+Le Gazole est le carburant présentant la plus forte volatilité sur l'ensemble de la période.
 
 ---
 
-## 📉 Graphiques générés
+## 📉 Visualisations
+
+Les graphiques générés sont disponibles dans le dossier :
+
+```text
+outputs/
+```
+
+Graphiques disponibles :
 
 - Evolution des prix des carburants
 - Prix moyen annuel
@@ -195,41 +239,57 @@ Le Gazole présente la plus forte volatilité sur la période étudiée.
 - Top 10 des mois les plus chers
 - Volatilité des carburants
 
-Les visuels sont disponibles dans le dossier :
+---
 
-```text
-outputs/
-```
+## 💡 Principaux enseignements
+
+- Les prix des carburants augmentent fortement entre 2021 et 2023.
+- Le pic de prix est observé en juin 2022.
+- Le SP98 est le carburant le plus coûteux.
+- Le Gazole est le plus volatil.
+- Les périodes de hausse coïncident avec des événements géopolitiques majeurs affectant les marchés énergétiques.
+- Les résultats illustrent la forte sensibilité du marché français des carburants aux tensions internationales.
+
+---
+
+## ✅ Conclusions
+
+L'analyse met en évidence une relation entre les grandes perturbations géopolitiques internationales et l'évolution des prix des carburants en France.
+
+Le pic observé entre 2022 et 2023 correspond à une période de forte instabilité énergétique mondiale marquée notamment par :
+
+- La guerre en Ukraine.
+- Les perturbations des flux énergétiques européens.
+- Les tensions sur les marchés mondiaux du pétrole.
+- Les risques géopolitiques persistants au Moyen‑Orient.
+
+Même si les prix diminuent progressivement à partir de 2024, ils demeurent supérieurs aux niveaux observés avant les grandes crises énergétiques.
+
+Cette étude démontre l'importance des événements internationaux dans l'évolution des prix de l'énergie et leur impact direct sur les consommateurs français.
 
 ---
 
 ## 🚀 Exécution du projet
 
-### Cloner le dépôt
+Installation des dépendances :
 
 ```bash
-git clone https://github.com/votre-utilisateur/fuel-prices-france-geopolitics.git
+pip install -r requirements.txt
 ```
 
-### Installer les dépendances
-
-```bash
-pip install pandas matplotlib
-```
-
-### Lancer la transformation
+Transformation des données :
 
 ```bash
 python3 src/transform.py
 ```
 
-### Lancer les analyses
+Analyse :
 
 ```bash
 python3 src/analyze.py
 ```
 
-### Générer les graphiques
+Création des graphiques :
 
 ```bash
 python3 src/visualize.py
@@ -237,22 +297,40 @@ python3 src/visualize.py
 
 ---
 
-## ✅ Conclusions
+## 📚 Compétences démontrées
 
-Cette étude met en évidence un impact majeur de la crise énergétique sur les prix des carburants en France.
+- Data Cleaning
+- Data Transformation
+- Data Analysis
+- Data Visualization
+- ETL
+- Python
+- Pandas
+- Matplotlib
+- SQL
+- Git
+- GitHub
 
-Les principaux enseignements sont :
+---
 
-- Hausse importante des prix entre 2021 et 2023.
-- Pic historique observé en juin 2022.
-- SP98 reste le carburant le plus coûteux.
-- Gazole présente la plus forte volatilité.
-- Les prix diminuent progressivement à partir de 2024 sans retrouver les niveaux observés en 2021.
+## 🔮 Perspectives d'amélioration
+
+- Ajout des cours du pétrole brut (Brent).
+- Analyse de corrélation entre pétrole et carburants.
+- Intégration d'indicateurs géopolitiques externes.
+- Construction d'un tableau de bord interactif.
+- Stockage des données dans PostgreSQL.
+- Automatisation du pipeline avec Airflow.
+- Déploiement cloud.
 
 ---
 
 ## 👨‍💻 Auteur
 
-Alpha Diallo
+**Alpha Diallo**
 
-Projet réalisé dans le cadre de la préparation à un poste de Data Analyst / Data Engineer Junior.
+Projet réalisé dans le cadre du développement de compétences en Data Analytics et de la préparation à un poste de Data Analyst / Data Engineer Junior.
+
+🔗 GitHub :
+
+https://github.com/Alpha38diallo/fuel-prices-france-geopolitics
