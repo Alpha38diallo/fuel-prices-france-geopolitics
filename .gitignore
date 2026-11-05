@@ -11,9 +11,12 @@ __pycache__/
 
 # Données brutes
 data/raw/
+logs/
+*.log
 
 # Gros fichier généré
 data/processed/carburants_2021_2025.csv
+data/processed/carburants.db
 
 .vscode/
 .idea/
