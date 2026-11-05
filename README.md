@@ -297,20 +297,31 @@ python3 src/visualize.py
 
 ---
 
-## 📚 Compétences démontrées
+## Skills Demonstrated
 
-- Data Cleaning
-- Data Transformation
-- Data Analysis
-- Data Visualization
-- ETL
+### Data Engineering
+- ETL Pipeline Development
+- Data Extraction and Processing
+- Data Cleaning and Transformation
+- SQLite Database Integration
+- Pipeline Automation
+- Logging and Monitoring
+- SQL
 - Python
 - Pandas
+
+### Data Analytics
+- Exploratory Data Analysis (EDA)
+- Data Visualization
+- Time Series Analysis
+- Price Volatility Analysis
+- Business and Geopolitical Insights
 - Matplotlib
-- SQL
+
+### Tools & Version Control
 - Git
 - GitHub
-
+- SQLite
 ---
 
 ## 🔮 Perspectives d'amélioration
